@@ -8,7 +8,7 @@ function __fish_timew_get_commands
 end
 
 function __fish_timew_get_tags
-    timew tags | tail -n+4 | cut -d'-' -f1
+    timew tags | tail -n+4 | sed "s/ *-.*//g" | sed "s/ /\\\\ /g"
 end
 
 function __fish_timew_get_ids
